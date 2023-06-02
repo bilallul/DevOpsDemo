@@ -12,7 +12,9 @@ public class Calculator {
                 return a * b;
             case "divide":
                 return a / b;
+            default:
+                throw new IllegalArgumentException("Invalid operation: " + operation);
         }
-        return b;
+
     }
 }
