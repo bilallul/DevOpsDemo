@@ -5,7 +5,7 @@ import java.util.Map;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-public final class RestServiceTest {
+public final class ServiceTest {
 
     
     @Test
@@ -46,5 +46,16 @@ public final class RestServiceTest {
         Person personCheck = personController.getPerson(id);
         Assertions.assertNull(personCheck);
     }
+
+    @Test
+    public void testTest() {
+        ToDoController controller = new ToDoController();
+        String message = controller.test();
+        String expectedMessage = "ToDo app is up and running!";
+        Assertions.assertEquals(expectedMessage, message);
+    }
+
+
+    
 
 }
