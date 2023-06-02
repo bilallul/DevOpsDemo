@@ -21,5 +21,10 @@ public class CalculatorTest {
     public void testCalculateMultiply() {
         Assertions.assertEquals(6, Calculator.calculate(2, 3, "multiply"));
     }
+
+    @Test
+    public void testCalculateDivide() {
+        Assertions.assertEquals(2, Calculator.calculate(6, 3, "divide"));
+    }
 }
 
