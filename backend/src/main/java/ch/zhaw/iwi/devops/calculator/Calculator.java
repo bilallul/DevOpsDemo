@@ -10,6 +10,8 @@ public class Calculator {
                 return a - b;
             case "multiply":
                 return a * b;
+            case "divide":
+                return a / b;
         }
         return b;
     }
