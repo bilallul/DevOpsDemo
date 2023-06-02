@@ -32,5 +32,11 @@ public class CalculatorTest {
         Assertions.assertThrows(IllegalArgumentException.class, () ->
                 Calculator.calculate(5, 2, "invalid"));
     }
+
+    @Test
+    public void testCalculateDivideByZero() {
+        Assertions.assertThrows(IllegalArgumentException.class, () ->
+                Calculator.calculate(5, 0, "divide"));
+    }
 }
 
