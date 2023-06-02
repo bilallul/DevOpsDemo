@@ -11,6 +11,9 @@ public class Calculator {
             case "multiply":
                 return a * b;
             case "divide":
+                if (b == 0) {
+                    throw new IllegalArgumentException("Division by zero is not allowed.");
+                }
                 return a / b;
             default:
                 throw new IllegalArgumentException("Invalid operation: " + operation);
