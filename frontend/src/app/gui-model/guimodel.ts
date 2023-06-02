@@ -87,6 +87,32 @@ export class GuiModel {
                         }
                     ]
                 },
+                {
+                    "id": "ModuleForm",
+                    "title": { default: "Module" },
+                    "formFieldList": [
+                        {
+                            "id": "Name",
+                            "type": "text",
+                            "name": { default: "Name" },
+                            "required": true
+                        },
+                        {
+                            "id": "Beschreibung",
+                            "name": { default: "Beschreibung" },
+                            "type": "text",
+                            "required": true
+                        },
+                        {
+                            "type": "cancelButton",
+                            "name": { default: "Abbrechen" },
+                        },
+                        {
+                            "type": "okButton",
+                            "name": { default: "OK" },
+                        }
+                    ]
+                }
             ],
             "pageList": [
                 {
@@ -107,13 +133,39 @@ export class GuiModel {
                             "width": 2,
                             "newRow": true,
                         },
+                        {
+                            "type": "button",
+                            "name": { default: "Module" },
+                            "icon": "fa-file-alt",
+                            "color": "wet-asphalt",
+                            "page": "modulePage",
+                            "width": 2,
+                        },
+                    ]
+                },
+                {
+                    "id": "modulePage",
+                    "elementList": [
+                        {
+                            "type": "backbutton"
+                        },
+                        {
+                            "type": "newButton",
+                            "name": { default: "Neues Modul" },
+                            "icon": "fa-user",
+                            "color": "green",
+                            "width": 2,
+                            "form": {
+                                "form": "ModuleForm"
+                            }
+                        }
                     ]
                 },
                 {
                     "id": "toDoPage",
                     "elementList": [
                         {
-                            "type": "backbutton",
+                            "type": "backbutton"
                         },
                         {
                             "type": "newButton",
@@ -121,8 +173,8 @@ export class GuiModel {
                             "icon": "fa-user",
                             "color": "green",
                             "width": 2,
-                            "form" : {
-                                "form" : "ToDoForm"
+                            "form": {
+                                "form": "ToDoForm"
                             }
                         },
                         {
@@ -137,11 +189,10 @@ export class GuiModel {
                             }
                         }
                     ]
-                },
+                }
             ]
         }
     };
-
 
     get guiModel() {
         return this._guiModel;
