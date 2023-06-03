@@ -55,7 +55,11 @@ public final class ServiceTest {
         Assertions.assertEquals(expectedMessage, message);
     }
 
-
+    @Test 
+    public void testToDo() {
+        ToDo todo = new ToDo();
+        Assertions.assertNull(todo.getTitle());
+    }
     
 
 }
