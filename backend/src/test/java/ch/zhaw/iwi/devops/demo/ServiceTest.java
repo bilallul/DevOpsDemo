@@ -7,7 +7,6 @@ import org.junit.jupiter.api.Test;
 
 public final class ServiceTest {
 
-    
     @Test
     public void getPersonTest() {
         PersonController personController = new PersonController();
@@ -16,7 +15,7 @@ public final class ServiceTest {
         Person person = personController.getPerson(id);
         Assertions.assertNotNull(person.getName());
     }
-    
+
     @Test
     public void getAllPersonsTest() {
         PersonController personController = new PersonController();
@@ -24,7 +23,7 @@ public final class ServiceTest {
         Map<Integer, Person> list = personController.getAllPersons();
         Assertions.assertEquals(3, list.size());
     }
-    
+
     @Test
     public void newPersonTest() {
         PersonController personController = new PersonController();
@@ -35,8 +34,7 @@ public final class ServiceTest {
         Map<Integer, Person> list = personController.getAllPersons();
         Assertions.assertEquals(4, list.size());
     }
-    
-    
+
     @Test
     public void deletePersonTest() {
         PersonController personController = new PersonController();
@@ -55,11 +53,21 @@ public final class ServiceTest {
         Assertions.assertEquals(expectedMessage, message);
     }
 
-    @Test 
+    @Test
     public void testToDo() {
         ToDo todo = new ToDo();
         Assertions.assertNull(todo.getTitle());
     }
-    
+
+    @Test
+    public void testcreateTodo() {
+        ToDo todo = new ToDo(6, "neues Titel", "neue Description");
+        ToDoController toDoController = new ToDoController();
+        toDoController.init();
+        toDoController.createTodo(todo);
+        ToDo toDoFromController = toDoController.getTodo(6);
+        Assertions.assertEquals(todo.getDescription(), toDoFromController.getDescription());
+
+    }
 
 }
